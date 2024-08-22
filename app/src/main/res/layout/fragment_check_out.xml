@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".presentation.main_app.checkout.CheckOutFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/purple_700"
+        android:elevation="10dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:transitionName="toolbar_cart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/back_24"
+        app:navigationIconTint="@color/white"
+        app:title="Checkout"
+        app:titleCentered="true"
+        app:titleTextColor="@color/white" />
+
+    <TextView
+        android:id="@+id/delivery_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimension_16dp"
+        android:layout_marginTop="@dimen/dimension_16dp"
+        android:fontFamily="@font/mailsansroman_bold"
+        android:text="Delivery details"
+        android:textSize="@dimen/sp18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/address_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimension_16dp"
+        app:cardCornerRadius="@dimen/dp8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/delivery_label">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/delivery_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/location_24"
+                android:drawableEnd="@drawable/expand_more_24"
+                android:drawablePadding="@dimen/dp8"
+                android:fontFamily="@font/mailsansroman_bold"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dimension_16dp"
+                android:text="11 computer village,Ikeja, Lagos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/payment_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimension_16dp"
+        android:layout_marginTop="@dimen/dimension_16dp"
+        android:fontFamily="@font/mailsansroman_bold"
+        android:text="Payment method"
+        android:textSize="@dimen/sp18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/address_card" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mastercard_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimension_16dp"
+        app:cardBackgroundColor="@color/background_color"
+        app:cardCornerRadius="@dimen/dp8"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_label">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/master_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/mc_symbol"
+                android:drawablePadding="@dimen/dp8"
+                android:fontFamily="@font/mailsansroman_bold"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dimension_16dp"
+                android:text="Free delivery on this order by paying with Mastercard."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/payment_method_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimension_16dp"
+        app:cardBackgroundColor="@color/background_color"
+        app:cardCornerRadius="@dimen/dp8"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mastercard_card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/payment_method_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/bank_transfer_com"
+                android:drawableEnd="@drawable/expand_more_24"
+                android:drawablePadding="@dimen/dp8"
+                android:fontFamily="@font/mailsansroman_bold"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dimension_16dp"
+                android:text="Bank Transfer."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/summary_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimension_16dp"
+        android:layout_marginTop="@dimen/dimension_16dp"
+        android:fontFamily="@font/mailsansroman_bold"
+        android:text="Summary"
+        android:textSize="@dimen/sp18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_method_card" />
+
+
+    <TextView
+        android:id="@+id/product_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimension_16dp"
+        android:layout_marginTop="@dimen/dimension_16dp"
+        android:fontFamily="@font/mailsansroman_demibold"
+        android:text="Products"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/summary_label" />
+
+    <TextView
+        android:id="@+id/product_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimension_16dp"
+        android:fontFamily="@font/mailsansroman_demibold"
+        android:text="5000"
+        app:layout_constraintBottom_toBottomOf="@id/product_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/product_label" />
+
+    <TextView
+        android:id="@+id/delivery_fee_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimension_16dp"
+        android:layout_marginTop="@dimen/dp8"
+        android:fontFamily="@font/mailsansroman_demibold"
+        android:text="Delivery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_label" />
+
+    <TextView
+        android:id="@+id/delivery_fee_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimension_16dp"
+        android:fontFamily="@font/mailsansroman_demibold"
+        android:text="5000"
+        app:layout_constraintBottom_toBottomOf="@id/delivery_fee_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/delivery_fee_label" />
+
+    <TextView
+        android:id="@+id/service_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimension_16dp"
+        android:layout_marginTop="@dimen/dp8"
+        android:fontFamily="@font/mailsansroman_demibold"
+        android:text="Service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/delivery_fee_label" />
+
+    <TextView
+        android:id="@+id/service_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimension_16dp"
+        android:fontFamily="@font/mailsansroman_demibold"
+        android:text="5000"
+        app:layout_constraintBottom_toBottomOf="@id/service_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/service_label" />
+
+    <TextView
+        android:id="@+id/total_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimension_16dp"
+        android:layout_marginTop="@dimen/dimension_16dp"
+        android:fontFamily="@font/mailsansroman_bold"
+        android:text="Total"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/service_label" />
+
+    <TextView
+        android:id="@+id/totale_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimension_16dp"
+        android:fontFamily="@font/mailsansroman_bold"
+        android:text="5000"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintBottom_toBottomOf="@id/total_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/total_label" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/checkout_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="@dimen/dimension_16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/confirm_order_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimension_16dp"
+                android:layout_marginTop="@dimen/dp8"
+                android:layout_marginEnd="@dimen/dimension_16dp"
+                android:layout_marginBottom="@dimen/dp8"
+                android:background="@drawable/background_coner"
+                android:backgroundTint="@color/yellow"
+                android:gravity="center"
+                android:padding="@dimen/dimension_16dp"
+                android:text="Confirm Order"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

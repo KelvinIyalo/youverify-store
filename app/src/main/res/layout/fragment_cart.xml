@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".presentation.main_app.cart.CartFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/purple_700"
+        app:titleTextColor="@color/white"
+        app:navigationIconTint="@color/white"
+        android:elevation="10dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:transitionName="toolbar_cart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/back_24"
+        app:title="Cart"
+        app:titleCentered="true" />
+
+    <TextView
+        android:id="@+id/cart_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimension_16dp"
+        android:text="CART SUMMARY" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/details_card"
+        app:layout_constraintTop_toBottomOf="@id/cart_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/sp16">
+
+            <TextView
+                android:id="@+id/title_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp8"
+                android:fontFamily="@font/mailsansroman_bold"
+                android:text="Subtotal"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/delivery_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp8"
+                android:fontFamily="@font/mailsansroman_demibold"
+                android:text="Delivery fee not included yet."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_label" />
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp8"
+                android:fontFamily="@font/mailsansroman_bold"
+                android:text="N2,000"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="@id/title_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@id/details_card"
+        app:layout_constraintBottom_toTopOf="@id/checkout_card"
+        android:id="@+id/cart_rv"
+        android:transitionName="rv_cart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dimension_16dp"
+        android:layout_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_layout_cart" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/checkout_card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="@dimen/dimension_16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/checkout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimension_16dp"
+                android:layout_marginTop="@dimen/dp8"
+                android:layout_marginEnd="@dimen/dimension_16dp"
+                android:layout_marginBottom="@dimen/dp8"
+                android:background="@drawable/background_coner"
+                android:backgroundTint="@color/yellow"
+                android:drawableStart="@drawable/add_to_cart_icon"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:padding="@dimen/dimension_16dp"
+                android:text="CHECKOUT"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/history_img"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/item_ic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/history_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mailsansroman_bold"
+        android:text="Your Cart is empty"
+        app:layout_constraintEnd_toEndOf="@id/history_img"
+        app:layout_constraintStart_toStartOf="@id/history_img"
+        app:layout_constraintTop_toBottomOf="@id/history_img" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/empty_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="history_txt,history_img" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/available_items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="cart_rv,cart_label,details_card,checkout_card" />
+</androidx.constraintlayout.widget.ConstraintLayout>
