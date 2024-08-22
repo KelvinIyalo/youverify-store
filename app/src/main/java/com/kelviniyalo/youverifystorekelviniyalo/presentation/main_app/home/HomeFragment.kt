@@ -29,6 +29,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         observeViewModel()
         navigateToCart()
         navigateToSearch()
+        navigateToUserProfile()
 
 
 
@@ -102,6 +103,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 binding.productListRv to "rv_cart"
             )
             val direction = HomeFragmentDirections.actionHomeFragmentToCartFragment()
+            findNavController().navigate(direction,extras)
+        }
+    }
+
+    private fun navigateToUserProfile(){
+        binding.profileImage.setOnClickListener {
+            val extras = FragmentNavigatorExtras(
+                binding.toolbarSection to "toolbar_cart"
+            )
+            val direction = HomeFragmentDirections.actionHomeFragmentToUserProfileFragment()
             findNavController().navigate(direction,extras)
         }
     }

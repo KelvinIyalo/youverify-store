@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".presentation.auth.user_profile.UserProfileFragment">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/purple_700"
+        app:titleTextColor="@color/white"
+        app:navigationIconTint="@color/white"
+        android:elevation="10dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:transitionName="toolbar_cart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/back_24"
+        app:title="Profile"
+        app:titleCentered="true" />
+
+
+    <ImageView
+        android:id="@+id/profile_avater"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="@dimen/dimension_16dp"
+        android:src="@drawable/user_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
+
+    <TextView
+        android:id="@+id/email_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimension_16dp"
+        android:layout_marginTop="@dimen/dimension_16dp"
+        android:fontFamily="@font/mailsansroman_demibold"
+        android:text="Email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_avater" />
+
+    <TextView
+        android:id="@+id/email_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimension_16dp"
+        android:fontFamily="@font/mailsansroman_demibold"
+        android:text="5000"
+        app:layout_constraintBottom_toBottomOf="@id/email_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/email_label" />
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/log_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="16dp"
+        android:layoutAnimation="@anim/layout_animation"
+        app:cardBackgroundColor="@color/background_color"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/manage_profile_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/mailsansroman_demibold"
+                android:text="Manage Profile "
+                android:textColor="@color/purple_700"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/upgrade_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/upgrade_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/manage_profile_label" />
+
+            <TextView
+                android:id="@+id/upgrade_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/mailsansroman_demibold"
+                android:text="Upgrade Account"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/upgrade_img"
+                app:layout_constraintStart_toEndOf="@id/upgrade_img"
+                app:layout_constraintTop_toTopOf="@id/upgrade_img" />
+
+            <View
+                android:id="@+id/div_one"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/grey"
+                android:paddingTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/upgrade_img" />
+
+            <ImageView
+                android:id="@+id/signout_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/logout_ic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_one" />
+
+            <TextView
+                android:id="@+id/signout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/mailsansroman_demibold"
+                android:text="Sign out"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/signout_img"
+                app:layout_constraintStart_toEndOf="@id/signout_img"
+                app:layout_constraintTop_toTopOf="@id/signout_img" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
